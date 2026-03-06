@@ -12,7 +12,7 @@
 
 </p>
 
-------------------------------------------------------------------------
+
 
 ## Overview
 
@@ -26,7 +26,6 @@ The framework formalizes a **Split‑Before‑Fit protocol**, provides
 automated leakage auditing, and introduces a quantitative **Leakage Risk
 Score (LRS)** for evaluation governance.
 
-------------------------------------------------------------------------
 
 ## Key Components
 
@@ -39,7 +38,7 @@ Evaluation pipelines must follow:
 3.  Use **validation for model selection**
 4.  Use the **test set only once for final reporting**
 
-------------------------------------------------------------------------
+
 
 ### 2. ALAV --- Automated Leakage Auditing Verifier
 
@@ -59,19 +58,19 @@ Output status:
 
 PASS / WARN / FAIL
 
-------------------------------------------------------------------------
-
 ### 3. Leakage Risk Score (LRS)
 
 ATLAS quantifies evaluation risk using a **Leakage Risk Score
 (0--100)**.
 
-  Score     Risk Level
-  --------- ------------
-  0--19     Low
-  20--39    Medium
-  40--69    High
-  70--100   Critical
+Risk levels:
+
+| Score | Interpretation |
+|------|----------------|
+| 0-19 | Low |
+| 20-39 | Medium |
+| 40-69 | High |
+| 70-100 | Critical |
 
 Computed using surrogate indicators:
 
@@ -79,7 +78,7 @@ Computed using surrogate indicators:
 -   Preprocessing Leakage Indicator (PLI)
 -   Test‑Reuse Optimism Proxy (TOP)
 
-------------------------------------------------------------------------
+
 
 ## Conceptual Pipeline
 
@@ -88,7 +87,7 @@ Computed using surrogate indicators:
 The **evaluation stage is protected by the ATLAS trust layer**,
 preventing information leakage from test data.
 
-------------------------------------------------------------------------
+
 
 ## Example Usage
 
@@ -106,7 +105,7 @@ results = protocol.evaluate(model, test_data)
 Auditor.run(protocol)
 ```
 
-------------------------------------------------------------------------
+
 
 ## Reproducibility Artifacts
 
@@ -119,4 +118,3 @@ ATLAS produces machine‑auditable artifacts such as:
 
 These allow independent verification of evaluation integrity.
 
-----------------------------------------------------------------
