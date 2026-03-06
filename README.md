@@ -5,7 +5,6 @@
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
-![Status](https://img.shields.io/badge/status-research--prototype-orange)
 ![ML Evaluation](https://img.shields.io/badge/ML-Evaluation%20Protocol-purple)
 ![Reproducibility](https://img.shields.io/badge/reproducibility-focused-success)
 ![Auditability](https://img.shields.io/badge/auditability-ALAV%20verified-blue)
