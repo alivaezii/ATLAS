@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    "breast_cancer",
+    "wine",
+    "digits",
+    "iris",
+    "diabetes_binary"
+  ],
+  "seeds": 50,
+  "trials": [
+    1,
+    5,
+    10,
+    20,
+    40
+  ],
+  "metrics": [
+    "roc_auc",
+    "pr_auc"
+  ],
+  "primary_comparison_metric": "paired_absdiff_roc_auc_gap",
+  "test": "One-sided Wilcoxon signed-rank on paired optimism-gap difference (leaky - anti_leakage), alpha=0.05, BH-FDR within each trial across datasets",
+  "effect_sizes": [
+    "cohen_dz",
+    "rank_biserial_sign"
+  ],
+  "outputs": [
+    "data/realworld/pressure_seed_results.csv",
+    "data/realworld/pressure_summary.csv",
+    "data/realworld/paired_significance.csv"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "dataset": "higgs_label_shuffle",
+  "n_seeds": 15,
+  "trials": 20,
+  "outputs": [
+    "data/higgs_negative_control/seed_results.csv",
+    "data/higgs_negative_control/summary.csv",
+    "data/higgs_negative_control/significance.csv"
+  ]
+}

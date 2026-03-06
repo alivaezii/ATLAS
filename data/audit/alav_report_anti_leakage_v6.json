@@ -1,0 +1,119 @@
+{
+  "audit_id": "alav-v6-anti_leakage",
+  "timestamp_utc": "2026-03-05T15:30:08.371265+00:00",
+  "dataset_id": "higgs",
+  "pipeline_version": "v6",
+  "protocol_profile": "anti_leakage",
+  "overall_status": "PASS",
+  "risk_score_lrs": 0.0,
+  "risk_level": "Low",
+  "checks": [
+    {
+      "check_id": "ALAV-01",
+      "name": "split_overlap_duplicate",
+      "status": "PASS",
+      "severity": "LOW",
+      "summary": "Exact/near-duplicate scan across splits.",
+      "evidence": [
+        {
+          "type": "metric",
+          "key": "duplicate_rate",
+          "value": "0.000000"
+        }
+      ],
+      "recommendation": "If non-zero, regenerate splits and deduplicate before fitting."
+    },
+    {
+      "check_id": "ALAV-02",
+      "name": "fit_scope_train_only",
+      "status": "PASS",
+      "severity": "LOW",
+      "summary": "Verifies learned operators are fit on train split only.",
+      "evidence": [
+        {
+          "type": "record",
+          "key": "violating_operators",
+          "value": "none"
+        }
+      ],
+      "recommendation": "Enforce fit-on-train-only for all learned operators."
+    },
+    {
+      "check_id": "ALAV-03",
+      "name": "augmentation_scope",
+      "status": "PASS",
+      "severity": "LOW",
+      "summary": "No augmentation stage detected in benchmark runner scripts.",
+      "evidence": [
+        {
+          "type": "artifact",
+          "key": "augmentation_metadata",
+          "value": "data/audit/augmentation_metadata_v6.json"
+        }
+      ],
+      "recommendation": "If augmentation is introduced later, enforce train-only augmentation logging."
+    },
+    {
+      "check_id": "ALAV-04",
+      "name": "hyperparameter_tuning_test_reuse",
+      "status": "PASS",
+      "severity": "LOW",
+      "summary": "No pre-lock test reuse expected in anti-leakage protocol.",
+      "evidence": [
+        {
+          "type": "flag",
+          "key": "immutable_test_single_use",
+          "value": "true"
+        }
+      ],
+      "recommendation": "Keep immutable single-use test policy and selection trace logs."
+    },
+    {
+      "check_id": "ALAV-05",
+      "name": "temporal_group_constraints",
+      "status": "PASS",
+      "severity": "LOW",
+      "summary": "Split design declares i.i.d. regime; group/temporal constraints marked not_applicable.",
+      "evidence": [
+        {
+          "type": "config",
+          "key": "split_design",
+          "value": "dataset: higgs | rules: |   group_constraint: not_applicable |   temporal_constraint: not_applicable |   i.i.d_assumption: enabled |   deterministic_split: true | "
+        }
+      ],
+      "recommendation": "For grouped/temporal tasks, require disjoint group/time audits."
+    },
+    {
+      "check_id": "ALAV-06",
+      "name": "cache_namespace_isolation",
+      "status": "PASS",
+      "severity": "LOW",
+      "summary": "Caching is disabled in benchmark runner scripts; no cross-split cache path detected.",
+      "evidence": [
+        {
+          "type": "artifact",
+          "key": "cache_lineage",
+          "value": "data/audit/cache_lineage_v6.json"
+        }
+      ],
+      "recommendation": "If caching is enabled later, enforce split namespace isolation in cache keys."
+    }
+  ],
+  "surrogates": {
+    "DOR": 0.0,
+    "PLI": 0.0,
+    "TOP": 0.0
+  },
+  "data_fingerprints": {
+    "hash_algo": "sha256",
+    "artifact_hash_manifest": "data/audit/artifact_hashes.sha256"
+  },
+  "reproducibility": {
+    "code_commit": "02fcfb8",
+    "environment": "python .venv (numpy/pandas/scipy/scikit-learn/matplotlib)",
+    "seed_policy": "deterministic per-seed with fixed offsets"
+  },
+  "limitations": [
+    "Current report audits protocol artifacts; it does not guarantee absence of all semantic contamination."
+  ]
+}

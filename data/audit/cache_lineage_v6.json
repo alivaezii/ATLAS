@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-03-05T15:30:08.183849+00:00",
+  "inspected_scripts": [
+    "experiments/run_higgs_leakage.py",
+    "experiments/run_realworld_leakage.py",
+    "experiments/run_synthetic_leakage.py"
+  ],
+  "policy": "Cross-split cache reuse is disabled in current benchmark pipelines.",
+  "cache_used": false,
+  "cache_namespace_mode": "disabled",
+  "keyword_hits": {},
+  "status": "pass",
+  "evidence_rule": "Static scan over benchmark runner scripts."
+}

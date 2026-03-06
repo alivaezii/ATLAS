@@ -1,0 +1,2 @@
+dataset,n_seeds,mean_diff,cohen_dz,wilcoxon_stat,p_value,primary_absdiff_metric
+higgs,3,-7.995411907032086e-05,-0.5375758330570316,1.0,0.875,paired_absdiff_roc_auc_gap

@@ -1,0 +1,22 @@
+{
+  "dataset": "higgs",
+  "input_csv": "data/raw/HIGGS.csv",
+  "max_rows": 1000000,
+  "seeds": 3,
+  "trials": 20,
+  "metrics": [
+    "roc_auc",
+    "pr_auc"
+  ],
+  "primary_comparison_metric": "paired_absdiff_roc_auc_gap",
+  "compute": {
+    "total_runtime_sec": 1357.8055042908527,
+    "n_samples": 1000000,
+    "n_features": 28
+  },
+  "outputs": [
+    "data/higgs/higgs_seed_results.csv",
+    "data/higgs/higgs_summary.csv",
+    "data/higgs/higgs_significance.csv"
+  ]
+}

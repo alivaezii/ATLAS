@@ -1,0 +1,3 @@
+metric,n_seeds,mean_diff,sd_diff,ci95_diff_lo,ci95_diff_hi,cohen_dz,wilcoxon_stat,p_value_one_sided,alpha,null_expectation
+roc_auc_gap,15,0.0013668499757520638,0.00249848353754085,0.0002647405949625751,0.002616535776843696,0.5470718358614424,83.0,0.1038818359375,0.05,no systematic protocol advantage under label shuffle
+pr_auc_gap,15,0.00163083741332462,0.0029721680182546147,0.0002543823646322629,0.003062633275796041,0.5487029681055239,95.0,0.023956298828125,0.05,no systematic protocol advantage under label shuffle

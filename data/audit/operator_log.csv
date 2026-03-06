@@ -1,0 +1,4 @@
+operator,fit_scope,apply_scope,status
+StandardScaler,train_only,val|test|external,enforced
+SGDClassifier,train_only,val|test|external,enforced
+HyperparameterSelection,val_or_test_by_protocol,none,logged

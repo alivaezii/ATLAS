@@ -1,0 +1,44 @@
+{
+  "seeds": 50,
+  "scenarios": [
+    "S1_preprocess",
+    "S2_feature_select",
+    "S3_test_peeking",
+    "S4_group_leakage",
+    "S5_temporal_leakage",
+    "S6_duplicate_leakage"
+  ],
+  "protocols": [
+    "leaky",
+    "partial",
+    "anti_leakage"
+  ],
+  "trials_for_s3_curve": [
+    1,
+    5,
+    10,
+    20,
+    40
+  ],
+  "s3_leaky_log_slope": 7.567276263718198e-05,
+  "s3_leaky_log_intercept": 0.0014957968462277662,
+  "s3_leaky_smoothed": [
+    0.0015413117632448715,
+    0.0016062132981641232,
+    0.0016707123451035412,
+    0.0017173216386423113,
+    0.0017453018108944856
+  ],
+  "test": "One-sided Wilcoxon signed-rank on paired optimism-gap difference (leaky - anti_leakage), alpha=0.05",
+  "effect_sizes": [
+    "cohen_dz"
+  ],
+  "outputs": [
+    "data/synthetic/s1_s6_seed_results.csv",
+    "data/synthetic/s1_s6_summary.csv",
+    "data/synthetic/s1_s6_reduction_table.csv",
+    "data/synthetic/s1_s6_significance.csv",
+    "data/synthetic/s3_selection_intensity.csv",
+    "data/synthetic/s3_selection_intensity_summary.csv"
+  ]
+}

@@ -1,0 +1,7 @@
+scenario,leakage_channel,delta_opt_leaky_minus_anti,wilcoxon_p_value,alav_primary_trigger,qualitative_pattern
+S1_preprocess,preprocessing,-0.001231,0.511448,ALAV-02,inflation_not_positive
+S2_feature_select,tuning_or_selection,0.249190,8.88178e-16,ALAV-04,inflation_positive
+S3_test_peeking,test_reuse_tuning,0.000011,0.553276,ALAV-04,inflation_positive
+S4_group_leakage,group_overlap,0.000679,0.350918,ALAV-05,inflation_positive
+S5_temporal_leakage,temporal_violation,0.000960,0.439167,ALAV-05,inflation_positive
+S6_duplicate_leakage,duplicate_overlap,0.000487,0.379716,ALAV-01,inflation_positive

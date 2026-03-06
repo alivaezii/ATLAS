@@ -1,0 +1,6 @@
+dataset: higgs
+rules:
+  group_constraint: not_applicable
+  temporal_constraint: not_applicable
+  i.i.d_assumption: enabled
+  deterministic_split: true

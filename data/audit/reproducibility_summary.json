@@ -1,0 +1,7 @@
+{
+  "git_commit": "02fcfb8",
+  "environment": "python .venv (numpy/pandas/scipy/scikit-learn/matplotlib)",
+  "seed_policy": "deterministic per-seed with fixed offsets",
+  "deterministic_split_enforcement": true,
+  "external_holdout_definition": "25% holdout separated before train/val/test partitioning"
+}

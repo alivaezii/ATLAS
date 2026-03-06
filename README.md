@@ -26,6 +26,51 @@ The framework formalizes a **Split‑Before‑Fit protocol**, provides
 automated leakage auditing, and introduces a quantitative **Leakage Risk
 Score (LRS)** for evaluation governance.
 
+## Repository Structure
+
+```
+ATLAS
+│
+├── README.md
+│
+├── data
+│   ├── synthetic
+│   ├── realworld
+│   ├── higgs
+│   ├── higgs_negative_control
+│   └── audit
+│
+├── experiments
+│
+└── figures
+```
+
+### Directory Description
+
+* **data/**
+  Contains all experiment outputs used in the manuscript, including synthetic experiments, real-world datasets, HIGGS benchmark results, and protocol audit artifacts.
+
+* **data/synthetic/**
+  Results from controlled synthetic experiments evaluating leakage behavior under different protocol conditions.
+
+* **data/realworld/**
+  Benchmark results on multiple real-world datasets demonstrating leakage pressure in practical settings.
+
+* **data/higgs/**
+  Large-scale experiments conducted on the HIGGS dataset used to evaluate robustness under realistic machine learning pipelines.
+
+* **data/higgs_negative_control/**
+  Negative-control experiments (label-shuffle) verifying that measured optimism gaps are not statistical artifacts.
+
+* **data/audit/**
+  ATLAS protocol audit logs, reproducibility metadata, and leakage risk diagnostics.
+
+* **experiments/**
+  Python scripts used to run the experiments and reproduce the results reported in the paper.
+
+* **figures/**
+  Figures included in the manuscript.
+
 
 ## Key Components
 
